@@ -1,23 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="/css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Maqueta Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="/pages/nosotros.html">Nosotros</a></li>
-                <li><a href="/pages/servicios.html">Servicios</a></li>
-                <li><a href="/pages/noticias.html">Noticias</a></li>
-                <li><a href="/pages/contactos.html">Contactos</a></li>
-            </ul>
-        </nav>
+
+    <header class="navbar">
+        <div class="logo"></div>
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <img src="/images/Logo1.png" height="40">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav gap-4">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/pages/nosotros.html">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/pages/servicios.html">Servicios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/pages/noticias.html">Noticias</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/pages/contactos.html">Contacto</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
     </header>
+
+    <section class="contact-container">
+        <div class="contact-form-section">
+          <h2>Contáctanos</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+            </div>
+            <div class="form-group">
+              <label for="fono">Teléfono</label>
+              <input type="tel" id="fono" name="fono" placeholder="+56 9 1234 5678">
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar mensaje</button>
+          </form>
+        </div>
+    
+        <div class="contact-image-section">
+          <img src="contacto.jpg" alt="Imagen de contacto">
+        </div>
+      </section>
+
+      <section class="map-section">
+        <h2>Ubicación</h2>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3542.9912936074943!2d-70.324542425538!3d-27.375987312717964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9698046365563383%3A0xd0dfc88db6eacef8!2sParque%20Schneider!5e0!3m2!1ses-419!2scl!4v1746244994876!5m2!1ses-419!2scl"
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </section>
+
+        <footer class="footer">
+            <div class="footer-container">
+              <div class="footer-logo">
+                <img src="/images/Logo1.png" alt="Logo" />
+              </div>
+              <div class="footer-content">
+                <div class="footer-info">
+                  <p><strong>CONTACTO</strong></p>
+                  <p>Dirección XX</p>
+                  <p>Fono: XXX</p>
+                  <p>Email: xxx</p>
+                </div>
+                <div class="footer-info">
+                  <p><strong>HORARIOS</strong></p>
+                  <p>Lunes a Viernes: 9:00 - 18:00</p>
+                  <p>Sábado: 9:00 - 14:00</p>
+                  <p>Domingo: Cerrado</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+          
+
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("nav-menu");
+        toggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
