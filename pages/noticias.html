@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maqueta Web</title>
+    <title>Proyecto Web</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <!-- FAVICON -->
+    <link rel="icon" href="/incons/ds.ico" type="image/x-icon" />
 </head>
 <body>
 
     <header class="navbar">
-        <div class="logo"></div>
-        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
               <a class="navbar-brand" href="#">
@@ -50,7 +50,8 @@
           <div class="card-body">
             <h3 class="card-title">Mujeres emprendedoras dan el salto con Capital Abeja 2025</h3>
             <p class="card-text">Más de 30 mujeres asesoradas por nuestra empresa lograron adjudicarse el fondo Capital Abeja, iniciando con éxito sus negocios en rubros como gastronomía, diseño y servicios</p>
-            <a href="#" class="card-btn">Leer más</a>
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#videoModal1">Ver Video 1</a>
+            
           </div>
         </div>
     
@@ -59,7 +60,7 @@
           <div class="card-body">
             <h3 class="card-title">Proyectos Semilla impulsan ideas innovadoras en regiones</h3>
             <p class="card-text">Emprendedores de distintas comunas lograron financiar sus ideas de negocio gracias al fondo Semilla, con acompañamiento técnico desde la postulación hasta la ejecución</p>
-            <a href="#" class="card-btn">Leer más</a>
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#videoModal2">Ver Video 2</a>
           </div>
         </div>
     
@@ -68,10 +69,53 @@
           <div class="card-body">
             <h3 class="card-title">Empresas consolidadas mejoran su productividad con CRECE</h3>
             <p class="card-text">Negocios locales asesorados en la convocatoria CRECE 2025 fortalecieron su operación mediante nuevas maquinarias, mejoras tecnológicas y expansión de servicios</p>
-            <a href="#" class="card-btn">Leer más</a>
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#videoModal3">Ver Video 3</a>
           </div>
         </div>
       </section>
+
+<!-- MODAL 1 -->
+<div class="modal fade" id="videoModal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 position-relative">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="ratio ratio-16x9">
+          <iframe id="videoFrame1" src="https://www.youtube.com/embed/rDwN_gjx_lA?si=jNaH4ew8f8Zuw_A5" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 2 -->
+<div class="modal fade" id="videoModal2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 position-relative">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="ratio ratio-16x9">
+          <iframe id="videoFrame2" src="https://www.youtube.com/embed/ZOuMBuMcbxw?si=GsDXX6sD2IraH2OJ" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 3 -->
+<div class="modal fade" id="videoModal3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0 position-relative">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="ratio ratio-16x9">
+          <iframe id="videoFrame3" src="https://www.youtube.com/embed/DRnY3-TBJcs?si=pdLk1o3M_PYdsUTr" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         <footer class="footer">
             <div class="footer-container">
@@ -105,6 +149,25 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Función para resetear iframe al cerrar el modal
+  document.addEventListener('DOMContentLoaded', function () {
+    const modals = [1, 2, 3];
+
+    modals.forEach(num => {
+      const modal = document.getElementById('videoModal' + num);
+      const iframe = document.getElementById('videoFrame' + num);
+      const originalSrc = iframe.src;
+
+      modal.addEventListener('hidden.bs.modal', function () {
+        iframe.src = ""; // limpia primero
+        iframe.src = originalSrc; // y vuelve a cargar
+      });
+    });
+  });
+</script>
+
+
 
 </body>
 </html>

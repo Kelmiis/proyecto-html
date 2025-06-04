@@ -24,6 +24,19 @@
         margin-right: auto;
     }
 
+    @media (max-width: 768px) {
+  .servicio-row {
+    flex-direction: column;
+  }
+
+  .servicio-info {
+    text-align: center;
+  }
+
+  .servicio-info p {
+    text-align: center;
+  }
+}
     .footer {
         flex-direction: column;
         text-align: center;
