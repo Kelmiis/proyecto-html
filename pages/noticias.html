@@ -150,7 +150,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // Función para resetear iframe al cerrar el modal
   document.addEventListener('DOMContentLoaded', function () {
     const modals = [1, 2, 3];
 
@@ -160,8 +159,8 @@
       const originalSrc = iframe.src;
 
       modal.addEventListener('hidden.bs.modal', function () {
-        iframe.src = ""; // limpia primero
-        iframe.src = originalSrc; // y vuelve a cargar
+        iframe.src = ""; 
+        iframe.src = originalSrc; 
       });
     });
   });
